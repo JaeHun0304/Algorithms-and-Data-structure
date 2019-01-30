@@ -35,14 +35,13 @@ int main(void){
 		vertex[i][2] = i;
 	}
 }
-    for(int k1 = 0; k1 < vertex.size(); k1++){
-    	for(int k2 = 0; k2 < vertex[k1].size(); k2++){
+
+	for(int k1 = 0; k1 < 8; k1++){
+    	for(int k2 = 0; k2 < 3; k2++){
     		std::cout << vertex[k1][k2] << " ";
     	}
     	std::cout << "\n";
     }
-
-
 
     BFS(adjList, vertex, 8, 3);
 
@@ -70,11 +69,11 @@ void BFS(std::vector<std::vector<int>> &adjlist, std::vector<std::vector<int>> &
 		queue.pop();
 
 		for(int j = 0; j < n; j++){
-			for(int k = 0; k < adjlist[j].size(); k++){
-			if(j == adjlist[std::get<2>(temp)][k] && vertex[j][0] != 1000){
-					queue.push(std::make_tuple(vertex[j][0], vertex[j][1], vertex[j][2]));
+			for(int l = 0; l < adjlist[std::get<2>(temp)].size(); l++){
+				if( j == adjlist[std::get<2>(temp)][l] && vertex[j][0] == 1000){
 					vertex[j][0] = std::get<0>(temp) + 1;
 					vertex[j][1] = std::get<2>(temp);
+					queue.push(std::make_tuple(vertex[j][0], vertex[j][1], vertex[j][2]));
 				}
 			}
 		}
