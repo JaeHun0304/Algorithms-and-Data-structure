@@ -7,9 +7,9 @@ void findTriplets(int arr[], int n);
 
 int main(){
 
-	int arr[] = {1, 3, 4, 5, -3, -1};
+	int arr[] = {1, 3, 4, 5, -3, -1, -2};
 
-	findTriplets(arr, 6);
+	findTriplets(arr, 7);
 
 	return 0;
 
@@ -27,7 +27,7 @@ void findTriplets(int arr[], int n){
 			int k = -(arr[i] + arr[j]);
 			if(s.find(k) != s.end())
 			{
-				printf("%d %d %d", k, arr[i], arr[j]);
+				printf("%d %d %d \n", k, arr[i], arr[j]);
 				found = true;
 			}
 			else
