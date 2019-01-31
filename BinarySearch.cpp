@@ -18,7 +18,7 @@ int main(){
 		std::cout << a << " ";
 	}
 
-	std::cout << "\n" << "15 is located at " << BinarySearch(s1, 15);
+	std::cout << "\n" << "15 is located at index:" << BinarySearch(s1, 15);
 
 	return 0;
 
