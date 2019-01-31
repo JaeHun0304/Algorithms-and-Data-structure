@@ -1,3 +1,5 @@
+// this target question and possible solution is cited from the website https://www.geeksforgeeks.org/
+// ,and I modfied some portion of the question
 
 #include <iostream>
 
