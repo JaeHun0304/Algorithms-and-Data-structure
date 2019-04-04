@@ -1,6 +1,6 @@
 // implement binary search on the sorted fixed-array list.
 // The binary search also can be used on dynamic array by using std::vector instead of the std::array
-
+// Test comment
 #include <algorithm>
 #include <array>
 #include <iostream>
