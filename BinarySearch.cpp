@@ -6,7 +6,7 @@
 #include <iostream>
 
 // Function BinarySearch declaration
-int BinarySearch(std::array<int, 10> Array, int target);
+int BinarySearch(std::array<int, 10> Array, int target); //asdfsdaf
 
 
 int main(){
