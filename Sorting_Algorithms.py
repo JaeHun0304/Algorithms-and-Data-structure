@@ -28,5 +28,6 @@ test_list = [1, 6, 3, 2, 5, 9]
 print(test_list)
 insertionsort(test_list)
 print(test_list)
+pdb.set_trace()
 reverse_insertionsort(test_list)
 print(test_list)
