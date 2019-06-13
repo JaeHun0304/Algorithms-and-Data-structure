@@ -23,11 +23,24 @@ def reverse_insertionsort(numbers):
 		numbers[index + 1] = key
 	return numbers
 
+def linear_search(numbers, target):
+	""" search matching data linearly """
+	for number in numbers:
+		if number == target:
+			message = "Matching data found!, which is " + str(number)
+			break
+		else:
+			message = "Matching data not found!, which is " + str(target)
+	return message
 
 test_list = [1, 6, 3, 2, 5, 9]
 print(test_list)
+
 insertionsort(test_list)
 print(test_list)
-pdb.set_trace()
+
 reverse_insertionsort(test_list)
 print(test_list)
+
+print(linear_search(test_list, 5))
+print(linear_search(test_list, 11))
