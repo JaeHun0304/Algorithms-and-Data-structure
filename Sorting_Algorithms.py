@@ -28,10 +28,13 @@ def linear_search(numbers, target):
 	for number in numbers:
 		if number == target:
 			message = "Matching data found!, which is " + str(number)
-			break
-		else:
-			message = "Matching data not found!, which is " + str(target)
+			return message
+	message = "Matching data not found!, which is " + str(target)
 	return message
+
+def mergesort(numbers):
+	""" Sort passing list with ascending order with mergesort, one of divide and conquer approach"""
+	
 
 test_list = [1, 6, 3, 2, 5, 9]
 print(test_list)
