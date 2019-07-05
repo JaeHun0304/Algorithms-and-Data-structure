@@ -5,18 +5,16 @@
 #include <string>
 #include <iostream>
 
-char findchar(std::string &arr, int n);
+char findchar(std::string arr, int n);
 
 int main(void){
 
-	std::string test = "abcdefgggg";
-
-	std::cout << findchar(test, 10);
-	
+	std::string test = "aabbkccddeeffgggg";
+	std::cout << findchar(test, test.length());
 	return 0;
 }
 
-char findchar(std::string &arr, int n){
+char findchar(std::string arr, int n){
 
 	if(n==0 || arr == "")
 		return '0';
@@ -31,15 +29,13 @@ char findchar(std::string &arr, int n){
 			ASCII[j]++;
 		}
 	}
-
 	}
 
 	for(int k = 0; k < 256; k++){
 		if(ASCII[k] == 1){
-			answer = ASCII[k];
-			return answer;
+			answer = char(k);
 		}
 	}
 
-
+	return answer;
 }
