@@ -4,7 +4,7 @@
 using namespace std;
 
 typedef struct Listnode{
-	char data[10];
+	string data;
 	struct Listnode* link;
 } listnode;
 
@@ -29,11 +29,11 @@ void freeLinkedList_h(linkedlist_h* L){	//free memory of all the list
 	}
 }
 
-void addLastNode(linkedlist_h* L, char* x){	//Insert node in the last
+void addLastNode(linkedlist_h* L, string x){	//Insert node in the last
 	listnode* newNode;
 	listnode* p;
 	newNode = (listnode*)malloc(sizeof(listnode));
-	strcpy(newNode->data, x);
+	newNode->data = x;
 	newNode->link=NULL;
 	if(L->head == NULL){
 		L->head = newNode;
@@ -72,11 +72,6 @@ void deleteLastNode(linkedlist_h* L){	//delete last node
 	if(previous==NULL){
 		return;
 	}
-	if(current==NULL){
-		free(current);
-		previous->link = NULL;
-		return;
-	}
 
 	while(current->link != NULL){
 		previous = current;
@@ -84,34 +79,36 @@ void deleteLastNode(linkedlist_h* L){	//delete last node
 	}
 	free(current);
 	previous->link = NULL;
-
 }
 
-void deleteTargetNode(linkedlist_h* L, char* target){
+void deleteTargetNode(linkedlist_h* L, string target){
 
 	listnode* previous;
 	listnode* current;
 	previous = L->head;
 	current = L->head->link;
 
-	if(previous->data == target && previous->link == NULL){
-		L->head = NULL;
+
+	if(previous==NULL){
+		return;
+	}
+
+	if(previous->data == target){
 		free(previous);
+		L->head = current;
 		return;
 	}
 
-	if(current->data == target && current->link == NULL){
-		previous->link = NULL;
-		free(current);
-		return;
-	}
-
-	while(current->data != target){
+	while(current != NULL){
+		if(current->data == target){
+			free(current);
+			previous->link = current->link;
+		}
 		previous = current;
 		current = current->link;
 	}
-	previous->link = current->link;
-	free(current);
+
+
 }
 
 void printList(linkedlist_h* L){	//print all the current nodes in the linked list
@@ -146,6 +143,9 @@ int main(){
 	printList(L);
 
 	reverse(L);
+	printList(L);
+
+	deleteTargetNode(L, "Tuesday");
 	printList(L);
 
 	freeLinkedList_h(L);
