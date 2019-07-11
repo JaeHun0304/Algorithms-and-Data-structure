@@ -94,7 +94,7 @@ void deleteTargetNode(linkedlist_h* L, char* target){
 	previous = L->head;
 	current = L->head->link;
 
-	if(previous->data == target && current == NULL){
+	if(previous->data == target && previous->link == NULL){
 		L->head = NULL;
 		free(previous);
 		return;
