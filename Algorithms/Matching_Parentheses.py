@@ -18,8 +18,8 @@ def wellMatched(formula):
 	return len(openStack) == 0
 
 
-# print(wellMatched("()()"))
-# print(wellMatched("{){}"))
+print(wellMatched("()()"))
+print(wellMatched("{){}"))
 
 """ find all partial lists in the whole list that summed to pre-defined number K """
 
@@ -56,5 +56,5 @@ def simple2(whole_list, k):
 	return ret
 
 sample_list = [1, 2, 3, 4, 5]
-#print(simple(sample_list, 5))
-#print(simple2(sample_list, 5))
+print(simple(sample_list, 5))
+print(simple2(sample_list, 5))
