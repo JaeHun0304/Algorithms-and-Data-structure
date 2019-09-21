@@ -15,8 +15,8 @@ void makeGraph(const vector<string>& words){
 
 		for(int k=0; k < len; ++k){
 			if(words[i][k] != words[j][k]){
-			int a = words[i][k] - 'a';
-			int b = words[j][k] - 'a';
+			int a = char(words[i][k]) - 'a';
+			int b = char(words[j][k]) - 'a';
 			adj[a][b] = 1;
 			break;
 			}
