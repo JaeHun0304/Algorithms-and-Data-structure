@@ -18,18 +18,16 @@ int countSetBits(int num){
 	return counter;
 }
 
-std::string complementBits(int num){
-	if(num == 0)
-		return "please enter number not zero";
-
-	std::string num_str = std::bitset<32>(num).to_string();
-	std::string num_str2;
-	for(int i =0; i < num_str.size(); i++){
-		if(num_str[i] == 0)
-			num_str2.push_back(1);
+auto complementBits(int num){
+	
+	std::bitset<32> bin_num = std::bitset<32>(num);
+	std::bitset<32> bin_num2;
+	for(int i =0; i < bin_num.size() ; i++){
+		if(bin_num[i] == 0)
+			bin_num2[i] = 1;
 		else
-			num_str2.push_back(0);
+			bin_num2[i] = 0;
 	}
 
-	return num_str2;
+	return bin_num2;
 }
