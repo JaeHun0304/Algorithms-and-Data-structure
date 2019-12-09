@@ -1,4 +1,3 @@
-
 #include <bitset>
 #include <string>
 #include <vector>
@@ -18,7 +17,7 @@ int countSetBits(int num){
 	return counter;
 }
 
-auto complementBits(int num){
+std::bitset<32> complementBits(int num){
 	
 	std::bitset<32> bin_num = std::bitset<32>(num);
 	std::bitset<32> bin_num2;
@@ -28,6 +27,6 @@ auto complementBits(int num){
 		else
 			bin_num2[i] = 0;
 	}
-
+	
 	return bin_num2;
 }
